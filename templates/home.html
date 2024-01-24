@@ -1,13 +1,14 @@
-<!-- templates/hello.html -->
+<!-- templates/home.html -->
 <!DOCTYPE html>
 <html>
-<title>Hello from Fly.io</title>
-<link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+<head>
+    <title>Project Will</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/app.css') }}">
+
+</head>
 <body>
-    {% if name %}
-        <h1>Hello, {{ name | capitalize }}!</h1>
-    {% else %}
-        <h1>Hello, World!</h1>
-    {% endif %}
+    <h1 id="home-headline">Home</h1>
+
 </body>
 </html>
+

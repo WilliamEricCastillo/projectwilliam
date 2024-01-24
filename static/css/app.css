@@ -1,0 +1,63 @@
+/* static/css/app.css */
+
+body {
+    background-color: black;
+    background-image: url("../images/main-background.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center; /* Center the background image */
+
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+
+#home-headline{
+    background-color: black;
+    font-size: 50px;
+}
+
+#login-hyperlink{
+    color: aqua;
+}
+
+#login-hyperlink:hover{
+    color: grey;
+    font-weight: bold;
+}
+
+.log-in-form {
+    background-color: black;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid white;
+    border-radius: 10px;
+    width: 400px; /* Increase the width */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+input{
+    margin-bottom: 20px;
+    padding: 7px;
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: transparent;
+    color: white;
+}
+
+
+input[type="submit"], button {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover, button:hover {
+    background-color: #eee;
+}
+
