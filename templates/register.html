@@ -1,0 +1,31 @@
+<!-- templates/register.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project Will</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/app.css') }}">
+</head>
+<body>
+    <h1 id="home-headline">Register</h1>
+
+    <form method="post" action="/register" class="log-in-form">
+        <label for="username">Username:</label>
+        <br>
+        <input type="text" id="username" name="username" required>
+        <br>
+
+        <label for="password">Password:</label>
+        <br>
+        <input type="password" id="password" name="password" required>
+        <br>
+
+        <label for="confirm-password">Confirm Password:</label>
+        <br>
+        <input type="password" id="confirm-password" name="confirm-password" required>
+        <br>
+
+        <input type="submit" value="Register"> 
+        <p id="login-link">Already Registered? <a id="login-hyperlink" href="{{ url_for('index') }}">Log in!</a></p>
+    </form>
+</body>
+</html>

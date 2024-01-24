@@ -1,0 +1,27 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project Will</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/app.css') }}">
+</head>
+<body>
+    <h1 id="home-headline">Project Will</h1>
+
+    <form method="post" action="{{ url_for('index') }}" class="log-in-form">
+        <h1>Login</h1>
+        <label for="username">Username:</label>
+        <br>
+        <input type="text" id="username" name="username" required>
+        <br>
+
+        <label for="password">Password:</label>
+        <br>
+        <input type="password" id="password" name="password" required>
+        <br>
+
+        <input type="submit" value="Login">
+        <p id="login-link">New User?  <a id="login-hyperlink" href="{{ url_for('register') }}">Sign Up!</a></p>
+    </form>
+</body>
+</html>
