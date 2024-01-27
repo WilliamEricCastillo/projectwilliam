@@ -22,8 +22,16 @@
         <label for="confirm-password">Confirm Password:</label>
         <br>
         <input type="password" id="confirm-password" name="confirm-password" required>
-        <br>
-
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="flash-messages">
+                {% for message in messages %}
+                    <div class="flash-message">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+    <br>
         <input type="submit" value="Register"> 
         <p id="login-link">Already Registered? <a id="login-hyperlink" href="{{ url_for('index') }}">Log in!</a></p>
     </form>

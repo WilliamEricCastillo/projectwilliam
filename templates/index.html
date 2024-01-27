@@ -19,7 +19,16 @@
         <br>
         <input type="password" id="password" name="password" required>
         <br>
-
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="flash-messages">
+                {% for message in messages %}
+                    <div class="flash-message">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+    <br>
         <input type="submit" value="Login">
         <p id="login-link">New User?  <a id="login-hyperlink" href="{{ url_for('register') }}">Sign Up!</a></p>
     </form>
