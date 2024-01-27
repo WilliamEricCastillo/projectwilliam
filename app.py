@@ -29,6 +29,10 @@ class Person(db.Model, UserMixin):
 
 with app.app_context():
     db.create_all()
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory('./static/images', 'favicon.ico', mimetype='image/vnd.microsoft.icon')
+
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -47,7 +51,6 @@ def index():
 
     return render_template('index.html')
 
-    
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
@@ -80,12 +83,29 @@ def register():
 
     return render_template('register.html')
 
+@app.route('/logout')
+def logout():
+    logout_user()
+    return redirect(url_for("index"))
+
 @app.route('/home')
 @login_required
 def home():
     return render_template('home.html')
 
-@app.route('/favicon.ico')
-def favicon():
-    return send_from_directory('./static/images', 'favicon.ico', mimetype='image/vnd.microsoft.icon')
+@app.route('/about')
+@login_required
+def about():
+    return render_template('about.html')
+
+@app.route('/services')
+@login_required
+def services():
+    return render_template('services.html')
+
+@app.route('/contact')
+@login_required
+def contact():
+    return render_template('contact.html')
+
 
