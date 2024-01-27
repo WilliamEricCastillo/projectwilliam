@@ -1,0 +1,29 @@
+<!-- base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/base.css') }}">
+    <title>Home Page</title>
+</head>
+<body>
+
+    <nav id="main-nav">
+        <ul class="nav-list">
+            <li><a href="{{ url_for('home') }}" class="nav-link-home">Home</a></li>
+            <li><a href="{{ url_for('about') }}" class="nav-link-about">About</a></li>
+            <li><a href="{{ url_for('services') }}" class="nav-link-services">Services</a></li>
+            <li><a href="{{ url_for('contact') }}" class="nav-link-contact">Contact</a></li>
+            <li><a href="{{ url_for('logout') }}" class="nav-link-logout">Logout</a></li>
+
+        </ul>
+    </nav>
+
+    <!-- Page content goes here -->
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+
+</body>
+</html>
