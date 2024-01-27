@@ -1,14 +1,9 @@
-<!-- templates/home.html -->
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Project Will</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='./css/app.css') }}">
+<!-- home.html -->
+{% extends 'base.html' %}
 
-</head>
-<body>
-    <h1 id="home-headline">Home</h1>
+{% block title %}Home Page{% endblock %}
 
-</body>
-</html>
+{% block content %}
+    <h1>Home Page</h1>
+{% endblock %}
 
